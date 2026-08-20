@@ -1,174 +1,1095 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>DOPROCA – Documentation, Processes, Conformity & Assurance</title>
+    <title>DOPROCA – Technik. Prozesse. Konformität.</title>
 
-    <meta name="description" content="DOPROCA – Technische Dokumentation, Prozessentwicklung, Konformität und Assurance.">
+    <meta name="description"
+        content="DOPROCA – Technische Dokumentation, Prozessentwicklung, Konformität und Assurance für den Maschinenbau.">
 
     <style>
-        body {
+
+        /* =========================
+           GRUNDEINSTELLUNGEN
+        ========================= */
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: Arial, sans-serif;
-            color: #222;
-            background: #f5f7f9;
+            padding: 0;
         }
 
-        header {
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1e2933;
             background: #ffffff;
-            padding: 25px 8%;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #e5e9ed;
+
+            padding: 14px 7%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #ddd;
         }
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            letter-spacing: 2px;
+        .logo img {
+            height: 70px;
+            width: auto;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+            align-items: center;
         }
 
         nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #333;
+            font-size: 15px;
+            font-weight: 600;
+            color: #344454;
+
+            position: relative;
+            transition: color 0.25s ease;
         }
 
+        nav a:hover {
+            color: #17648a;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+
+            width: 0;
+            height: 2px;
+
+            background: #17648a;
+
+            transition: width 0.25s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
-            min-height: 70vh;
+            min-height: 82vh;
+
             display: flex;
             align-items: center;
-            padding: 0 8%;
-            background: linear-gradient(135deg, #ffffff, #eaf1f5);
+
+            padding: 80px 7%;
+
+            background:
+                radial-gradient(circle at 85% 25%, rgba(23, 100, 138, 0.10), transparent 30%),
+                linear-gradient(135deg, #ffffff 0%, #f2f6f8 100%);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            border: 1px solid rgba(23, 100, 138, 0.10);
+            border-radius: 50%;
+
+            right: -180px;
+            top: -150px;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border: 1px solid rgba(23, 100, 138, 0.08);
+            border-radius: 50%;
+
+            right: -70px;
+            top: -70px;
         }
 
         .hero-content {
-            max-width: 750px;
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
         }
 
-        h1 {
-            font-size: 56px;
-            margin-bottom: 15px;
+        .eyebrow {
+            color: #17648a;
+            font-size: 14px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 3px;
+
+            margin-bottom: 20px;
         }
 
-        .subtitle {
-            font-size: 24px;
-            color: #555;
-            line-height: 1.5;
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 76px);
+            line-height: 1.05;
+
+            color: #182832;
+
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: #17648a;
+        }
+
+        .hero-text {
+            font-size: 21px;
+            color: #536370;
+
+            max-width: 700px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .button {
             display: inline-block;
-            margin-top: 25px;
+
             padding: 14px 28px;
-            background: #1d4f6e;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
+
+            border-radius: 6px;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            transition: all 0.25s ease;
         }
 
-        section {
-            padding: 70px 8%;
+        .button-primary {
+            background: #17648a;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #114d6b;
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            border: 1px solid #b8c5cd;
+            color: #344454;
             background: white;
         }
 
-        h2 {
-            font-size: 36px;
+        .button-secondary:hover {
+            border-color: #17648a;
+            color: #17648a;
+            transform: translateY(-2px);
         }
 
-        footer {
-            padding: 30px 8%;
-            background: #222;
+
+        /* =========================
+           SECTION GRUNDLAGE
+        ========================= */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-header {
+            max-width: 750px;
+            margin-bottom: 55px;
+        }
+
+        .section-label {
+            color: #17648a;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            font-size: clamp(34px, 4vw, 48px);
+            line-height: 1.15;
+
+            color: #182832;
+
+            margin-bottom: 18px;
+        }
+
+        .section-intro {
+            font-size: 18px;
+            color: #60707c;
+        }
+
+
+        /* =========================
+           LEISTUNGEN
+        ========================= */
+
+        #leistungen {
+            background: #ffffff;
+        }
+
+        .services {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .service-card {
+            padding: 35px 30px;
+
+            background: #f5f8fa;
+
+            border: 1px solid #e3e9ed;
+            border-radius: 10px;
+
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+
+            border-color: #b8d0dc;
+
+            box-shadow: 0 15px 35px rgba(22, 50, 65, 0.08);
+        }
+
+        .service-number {
+            font-size: 14px;
+            font-weight: 700;
+
+            color: #17648a;
+
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 23px;
+            color: #182832;
+
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #62717c;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           ÜBER MICH
+        ========================= */
+
+        #ueber-mich {
+            background: #f3f6f8;
+        }
+
+        .about {
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 430px;
+
+            display: block;
+
+            border-radius: 10px;
+
+            box-shadow: 0 20px 50px rgba(20, 40, 50, 0.15);
+        }
+
+        .about-content {
+            max-width: 700px;
+        }
+
+        .about-content p {
+            font-size: 17px;
+            color: #5c6c77;
+
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            margin-top: 30px;
+
+            padding: 25px 30px;
+
+            border-left: 4px solid #17648a;
+
+            background: white;
+        }
+
+        .highlight strong {
+            color: #182832;
+        }
+
+
+        /* =========================
+           ARBEITSWEISE
+        ========================= */
+
+        #arbeitsweise {
+            background: white;
+        }
+
+        .process {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 30px;
+        }
+
+        .process-step {
+            position: relative;
+
+            padding-top: 20px;
+        }
+
+        .process-step::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 45px;
+            height: 3px;
+
+            background: #17648a;
+        }
+
+        .process-step span {
+            display: block;
+
+            color: #17648a;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            margin-bottom: 12px;
+        }
+
+        .process-step h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+
+            color: #182832;
+        }
+
+        .process-step p {
+            color: #667681;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           KONTAKT
+        ========================= */
+
+        #kontakt {
+            background:
+                linear-gradient(135deg, #183849, #17648a);
+
             color: white;
+
             text-align: center;
         }
+
+        #kontakt .section-label {
+            color: #b9dce9;
+        }
+
+        #kontakt h2 {
+            color: white;
+        }
+
+        #kontakt .section-intro {
+            color: #d7e5ea;
+
+            max-width: 650px;
+
+            margin: 0 auto 35px;
+        }
+
+        .contact-button {
+            background: white;
+            color: #17648a;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #14242d;
+
+            color: #9daeb7;
+
+            padding: 30px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .about-image img {
+                max-width: 400px;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 12px 5%;
+            }
+
+            .logo img {
+                height: 55px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .hero {
+                min-height: 75vh;
+                padding: 70px 5%;
+            }
+
+            .hero-text {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            nav {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
-    <div class="logo">DOPROCA</div>
+
+    <a href="#" class="logo">
+
+        <img
+            src="Logo groß.png"
+            alt="DOPROCA – Documentation, Processes, Conformity & Assurance"
+        >
+
+    </a>
+
 
     <nav>
+
         <a href="#leistungen">Leistungen</a>
+
         <a href="#ueber-mich">Über mich</a>
+
+        <a href="#arbeitsweise">Arbeitsweise</a>
+
         <a href="#kontakt">Kontakt</a>
+
     </nav>
+
 </header>
 
+
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
     <div class="hero-content">
 
-        <h1>DOPROCA</h1>
-
-        <div class="subtitle">
-            Documentation · Processes · Conformity · Assurance
+        <div class="eyebrow">
+            Technik · Prozesse · Qualität
         </div>
 
-        <p>
-            Technische Dokumentation, strukturierte Prozesse und
-            praxisorientierte Lösungen für den Maschinenbau.
+
+        <h1>
+            Technik verständlich machen.<br>
+            <span>Prozesse besser machen.</span>
+        </h1>
+
+
+        <p class="hero-text">
+
+            DOPROCA steht für eine strukturierte Verbindung
+            aus technischer Dokumentation, Prozessentwicklung,
+            Konformität und praxisorientierten Lösungen
+            im Maschinenbau.
+
         </p>
 
-        <a class="button" href="#leistungen">
-            Leistungen entdecken
-        </a>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#leistungen"
+                class="button button-primary"
+            >
+                Leistungen entdecken
+            </a>
+
+
+            <a
+                href="#ueber-mich"
+                class="button button-secondary"
+            >
+                Mehr über mich
+            </a>
+
+        </div>
 
     </div>
 
 </section>
 
 
+
+<!-- =========================
+     LEISTUNGEN
+========================= -->
+
 <section id="leistungen">
 
-    <h2>Leistungen</h2>
+    <div class="section-header">
 
-    <p>
-        Technische Dokumentation, Prozessentwicklung,
-        Konformitätsbewertung und Unterstützung bei
-        der Umsetzung technischer Anforderungen.
-    </p>
+        <div class="section-label">
+            Leistungen
+        </div>
+
+
+        <h2>
+            Vier Perspektiven.<br>
+            Eine ganzheitliche Lösung.
+        </h2>
+
+
+        <p class="section-intro">
+
+            DOPROCA verbindet technische Kompetenz
+            mit strukturiertem Prozessdenken und einem
+            klaren Blick auf Anforderungen und Qualität.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="services">
+
+
+        <div class="service-card">
+
+            <div class="service-number">
+                01 / DOCUMENTATION
+            </div>
+
+            <h3>
+                Technische Dokumentation
+            </h3>
+
+            <p>
+
+                Betriebsanleitungen, technische Informationen
+                und Dokumentationsstrukturen – verständlich,
+                strukturiert und praxisorientiert.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="service-card">
+
+            <div class="service-number">
+                02 / PROCESSES
+            </div>
+
+            <h3>
+                Prozesse
+            </h3>
+
+            <p>
+
+                Bestehende Abläufe analysieren, Strukturen
+                schaffen und Prozesse effizienter,
+                nachvollziehbarer und robuster gestalten.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="service-card">
+
+            <div class="service-number">
+                03 / CONFORMITY
+            </div>
+
+            <h3>
+                Konformität
+            </h3>
+
+            <p>
+
+                Technische Anforderungen, Normen und
+                regulatorische Vorgaben verstehen und
+                in praktikable Lösungen übersetzen.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="service-card">
+
+            <div class="service-number">
+                04 / ASSURANCE
+            </div>
+
+            <h3>
+                Assurance
+            </h3>
+
+            <p>
+
+                Qualität und Nachvollziehbarkeit sicherstellen –
+                von der technischen Information bis zur
+                strukturierten Umsetzung.
+
+            </p>
+
+        </div>
+
+
+    </div>
 
 </section>
 
+
+
+<!-- =========================
+     ÜBER MICH
+========================= -->
 
 <section id="ueber-mich">
 
-    <h2>Über DOPROCA</h2>
+    <div class="about">
 
-    <p>
-        DOPROCA verbindet technisches Verständnis,
-        Dokumentation, Prozessdenken und betriebswirtschaftliche
-        Perspektiven.
-    </p>
+
+        <div class="about-image">
+
+            <img
+                src="IMG_E3116.JPG"
+                alt="Jannik Reinker"
+            >
+
+        </div>
+
+
+
+        <div class="about-content">
+
+            <div class="section-label">
+                Über DOPROCA
+            </div>
+
+
+            <h2>
+                Technisches Verständnis trifft
+                auf Prozessdenken.
+            </h2>
+
+
+            <p>
+
+                Hinter DOPROCA steht die Überzeugung,
+                dass gute technische Lösungen nicht allein
+                durch Technik entstehen.
+
+            </p>
+
+
+            <p>
+
+                Entscheidend ist das Zusammenspiel aus
+                technischem Verständnis, klarer Dokumentation,
+                funktionierenden Prozessen und der sicheren
+                Umsetzung von Anforderungen.
+
+            </p>
+
+
+            <p>
+
+                Mein Hintergrund im Maschinenbau und in der
+                technischen Redaktion bildet dafür die Basis.
+                Ergänzt wird diese Perspektive durch den
+                zunehmenden Fokus auf Prozessentwicklung,
+                Konformität und betriebswirtschaftliche
+                Zusammenhänge.
+
+            </p>
+
+
+            <div class="highlight">
+
+                <strong>
+                    Mein Anspruch:
+                </strong>
+
+                technische Zusammenhänge verstehen,
+                strukturiert aufbereiten und daraus
+                praktikable Lösungen entwickeln.
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
+
+<!-- =========================
+     ARBEITSWEISE
+========================= -->
+
+<section id="arbeitsweise">
+
+    <div class="section-header">
+
+        <div class="section-label">
+            Arbeitsweise
+        </div>
+
+
+        <h2>
+            Von der Anforderung<br>
+            zur Lösung.
+        </h2>
+
+
+        <p class="section-intro">
+
+            DOPROCA betrachtet technische Aufgaben
+            nicht isoliert, sondern als Teil eines
+            größeren Zusammenhangs.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="process">
+
+
+        <div class="process-step">
+
+            <span>
+                01
+            </span>
+
+            <h3>
+                Verstehen
+            </h3>
+
+            <p>
+
+                Anforderungen, technische Zusammenhänge
+                und bestehende Strukturen erfassen.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="process-step">
+
+            <span>
+                02
+            </span>
+
+            <h3>
+                Strukturieren
+            </h3>
+
+            <p>
+
+                Informationen und Abläufe ordnen,
+                Schnittstellen erkennen und
+                Verbesserungspotenziale identifizieren.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="process-step">
+
+            <span>
+                03
+            </span>
+
+            <h3>
+                Entwickeln
+            </h3>
+
+            <p>
+
+                Praktikable Konzepte und Lösungen
+                entwickeln, die technisch und
+                organisatorisch funktionieren.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="process-step">
+
+            <span>
+                04
+            </span>
+
+            <h3>
+                Umsetzen
+            </h3>
+
+            <p>
+
+                Lösungen nachvollziehbar dokumentieren
+                und gemeinsam in die Praxis überführen.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     KONTAKT
+========================= -->
+
 <section id="kontakt">
 
-    <h2>Kontakt</h2>
+    <div class="section-label">
+        Kontakt
+    </div>
 
-    <p>
-        Interesse an einer Zusammenarbeit?
+
+    <h2>
+        Sie haben eine technische Herausforderung?
+    </h2>
+
+
+    <p class="section-intro">
+
+        Ob technische Dokumentation, Prozessentwicklung
+        oder die strukturierte Umsetzung technischer
+        Anforderungen – lassen Sie uns darüber sprechen.
+
     </p>
 
-    <a class="button" href="mailto:kontakt@doproca.de">
+
+    <a
+        class="button contact-button"
+        href="mailto:kontakt@doproca.de"
+    >
         Kontakt aufnehmen
     </a>
 
 </section>
 
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-    © 2026 DOPROCA
+
+    <div>
+        © 2026 <strong>DOPROCA</strong>
+    </div>
+
+
+    <div>
+        Documentation · Processes · Conformity · Assurance
+    </div>
+
 </footer>
 
+
 </body>
+
 </html>
