@@ -499,24 +499,98 @@ footer strong {
 
 
 /* =========================================================
-   10 · PERSÖNLICHE DATEN
+   10 · PROFIL
    ========================================================= */
 
-.personal-data {
-    max-width: 1000px;
+.profile-section {
+    background: #ffffff;
+}
+
+
+.profile {
+    max-width: 1050px;
 
     margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: 280px 1fr;
 
-    gap: 20px;
+    gap: 65px;
+
+    align-items: center;
 }
 
+
+/* FOTO */
+
+.profile-image {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.profile-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 280px;
+
+    aspect-ratio: 3 / 4;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 18px 40px rgba(20, 40, 50, 0.14);
+}
+
+
+/* PROFILTEXT */
+
+.profile-content {
+    max-width: 700px;
+}
+
+
+.profile-content h2 {
+    margin-bottom: 5px;
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    color: #182832;
+
+    line-height: 1.05;
+}
+
+
+.profile-role {
+    margin-bottom: 35px;
+
+    color: #1d4f6e;
+
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+/* DATENBLÖCKE */
+
+.personal-data {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
 .data-item {
-    padding: 25px;
+    padding: 20px;
 
     background: #f5f7f9;
 
@@ -525,19 +599,22 @@ footer strong {
     border-radius: 5px;
 }
 
+
 .data-label {
     display: block;
 
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 
     color: #1d4f6e;
 
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
+
     text-transform: uppercase;
 }
+
 
 .data-value {
     color: #273640;
@@ -867,6 +944,12 @@ footer strong {
 
         text-align: center;
     }
+   
+   .profile {
+    grid-template-columns: 220px 1fr;
+
+    gap: 40px;
+   }
 
 }
 
@@ -975,5 +1058,23 @@ footer strong {
 
         padding: 9px 12px;
     }
+
+   .profile {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+   }
+
+   .profile-image {
+       justify-content: flex-start;
+   }
+
+   .profile-image img {
+       max-width: 240px;
+   }
+
+   .personal-data {
+       grid-template-columns: 1fr;
+   }
 
 }
