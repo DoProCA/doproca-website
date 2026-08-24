@@ -729,6 +729,7 @@ footer strong {
     border-left: 4px solid #1d4f6e;
 
     border-radius: 4px;
+}
 
 .timeline-item.current .timeline-content {
     position: relative;
@@ -934,9 +935,6 @@ footer strong {
     .timeline-content {
         padding-left: 25px;
 
-    }
-    .skills-grid {
-        grid-template-columns: 1fr;
     }
 
     footer {
