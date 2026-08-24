@@ -576,7 +576,7 @@ footer strong {
 .timeline-item {
     display: grid;
 
-    grid-template-columns: 190px 1fr;
+    grid-template-columns: 210px 1fr;
 
     gap: 60px;
 
@@ -600,6 +600,21 @@ footer strong {
     text-align: right;
 
     padding-top: 4px;
+}
+
+   .company-logo {
+    display: block;
+
+    max-width: 190px;
+    width: 100%;
+
+    max-height: 65px;
+
+    object-fit: contain;
+
+    object-position: right center;
+
+    margin-top: 12px;
 }
 
 .timeline-content {
