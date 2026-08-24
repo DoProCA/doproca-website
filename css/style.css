@@ -608,24 +608,6 @@ footer strong {
     padding-left: 35px;
 }
 
-.timeline-content::before {
-    content: "";
-
-    position: absolute;
-
-    left: -66px;
-    top: 6px;
-
-    width: 11px;
-    height: 11px;
-
-    border-radius: 50%;
-
-    background: #ffffff;
-
-    border: 3px solid #1d4f6e;
-}
-
 .timeline-content p {
     color: #59666e;
 
@@ -655,11 +637,6 @@ footer strong {
     border-left: 4px solid #1d4f6e;
 
     border-radius: 4px;
-}
-
-.timeline-item.highlight .timeline-content::before {
-    left: -70px;
-}
 
 .timeline-item.current .timeline-content {
     position: relative;
@@ -850,16 +827,8 @@ footer strong {
 
     .timeline-content {
         padding-left: 25px;
-    }
 
-    .timeline-content::before {
-        left: -36px;
     }
-
-    .timeline-item.highlight .timeline-content::before {
-        left: -40px;
-    }
-
     .skills-grid {
         grid-template-columns: 1fr;
     }
