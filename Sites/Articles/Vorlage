@@ -1,1 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TITEL DES BERICHTS – DoProCA</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../../pictures/Bildmarke.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/style.css"
+    >
+
+    <meta
+        name="description"
+        content="KURZE BESCHREIBUNG DES BERICHTS."
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header>
+
+    <a href="../../index.html" class="logo">
+
+        <img
+            src="../../pictures/Logo groß.png"
+            alt="DoProCA"
+        >
+
+    </a>
+
+
+    <nav>
+
+        <a href="../../index.html">
+            Startseite
+        </a>
+
+        <a href="../../cv.html">
+            Über
+        </a>
+
+        <a href="../../articles.html">
+            Berichte
+        </a>
+
+
+        <!-- SPRACHUMSCHALTER -->
+
+        <div class="language-switch">
+
+            <a
+                href="index.html"
+                class="active"
+                title="Deutsch"
+            >
+                🇩🇪
+            </a>
+
+            <a
+                href="index_en.html"
+                title="English"
+            >
+                🇺🇸
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================
+     ARTIKEL
+========================================= -->
+
+<main class="article-page">
+
+
+    <!-- =====================================
+         ARTIKEL-KOPF
+    ====================================== -->
+
+    <section class="article-header">
+
+        <div class="article-meta">
+            TECHNISCHE DOKUMENTATION · 27.08.2026
+        </div>
+
+
+        <h1>
+            TITEL DES BERICHTS
+        </h1>
+
+
+        <p class="article-intro">
+            Hier steht eine kurze Einleitung in den Bericht.
+            Zwei bis drei Sätze, die dem Leser erklären,
+            worum es geht und warum das Thema interessant ist.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================
+         TITELBILD
+    ====================================== -->
+
+    <div class="article-hero-image">
+
+        <img
+            src="../../pictures/bericht-beispiel.jpg"
+            alt="Beschreibung des Titelbildes"
+        >
+
+    </div>
+
+
+
+    <!-- =====================================
+         ARTIKELTEXT
+    ====================================== -->
+
+    <div class="article-content">
+
+
+        <h2>
+            Einleitung
+        </h2>
+
+        <p>
+            Hier beginnt dein eigentlicher Bericht.
+            Du kannst deine Gedanken, Erfahrungen oder
+            fachlichen Inhalte ausführlich beschreiben.
+        </p>
+
+
+        <p>
+            Ein weiterer Absatz mit ergänzenden Informationen.
+            Die Textbreite ist bewusst begrenzt, damit längere
+            Texte angenehm zu lesen bleiben.
+        </p>
+
+
+
+        <h2>
+            Erste Zwischenüberschrift
+        </h2>
+
+        <p>
+            Hier kannst du einen neuen Aspekt des Themas
+            erläutern. Absätze, Überschriften und Bilder
+            können beliebig miteinander kombiniert werden.
+        </p>
+
+
+
+        <!-- HERVORHEBUNG -->
+
+        <div class="article-highlight">
+
+            Eine wichtige Erkenntnis oder ein besonders
+            interessanter Gedanke kann hier hervorgehoben werden.
+
+        </div>
+
+
+
+        <h2>
+            Zweite Zwischenüberschrift
+        </h2>
+
+        <p>
+            Hier folgt ein weiterer Abschnitt des Berichts.
+            Du kannst auch eigene Bilder oder Grafiken
+            innerhalb des Artikels verwenden.
+        </p>
+
+
+        <!-- WEITERES BILD -->
+
+        <img
+            src="../../pictures/bericht-bild-02.jpg"
+            alt="Beschreibung des Bildes"
+        >
+
+
+        <h3>
+            Weitere Unterüberschrift
+        </h3>
+
+        <p>
+            Dieser Bereich eignet sich für detailliertere
+            Erläuterungen innerhalb eines größeren Themas.
+        </p>
+
+
+
+        <h2>
+            Fazit
+        </h2>
+
+        <p>
+            Hier kannst du die wichtigsten Erkenntnisse des
+            Berichts noch einmal zusammenfassen und deine
+            persönliche Schlussfolgerung formulieren.
+        </p>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         ZURÜCK
+    ====================================== -->
+
+    <div class="article-back">
+
+        <a href="../../articles.html">
+            ← Zurück zu den Berichten
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div>
+        2026 <strong>DoProCA</strong>
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="../../datenschutz.html">
+            Datenschutz
+        </a>
+
+        <a href="../../impressum.html">
+            Impressum
+        </a>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
