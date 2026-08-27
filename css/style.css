@@ -716,6 +716,67 @@ footer strong {
     font-weight: 600;
 }
 
+.timeline-details {
+    margin-top: 20px;
+}
+
+.timeline-details summary {
+    display: inline-block;
+
+    cursor: pointer;
+
+    color: #1d4f6e;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    padding: 8px 12px;
+
+    border: 1px solid #d9e0e3;
+    border-radius: 4px;
+
+    background: #f5f7f9;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.timeline-details summary:hover {
+    background: #eef3f6;
+    border-color: #1d4f6e;
+}
+
+.timeline-details summary::marker {
+    color: #1d4f6e;
+}
+
+.timeline-reflection {
+    margin-top: 18px;
+
+    padding: 20px 25px;
+
+    background: #f5f7f9;
+
+    border-left: 3px solid #1d4f6e;
+
+    border-radius: 3px;
+}
+
+.timeline-reflection p {
+    color: #53616a;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+}
+
+.timeline-reflection p:last-child {
+    margin-bottom: 0;
+}
+
 
 /* =========================================================
    12 · TIMELINE HIGHLIGHTS
