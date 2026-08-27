@@ -687,7 +687,7 @@ footer strong {
     height: 65px;
 
     object-fit: contain;
-    object-position: center center;
+    object-position: left center;
 
     margin: 12px auto 0;
 }
