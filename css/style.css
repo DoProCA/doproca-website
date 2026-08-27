@@ -1076,3 +1076,61 @@ footer strong {
    }
 
 }
+/* =========================================================
+   17 · RECHTLICHE SEITEN
+   ========================================================= */
+
+.legal-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.legal-content h2 {
+    margin-top: 45px;
+    margin-bottom: 15px;
+
+    font-size: 25px;
+}
+
+.legal-content h2:first-child {
+    margin-top: 0;
+}
+
+.legal-content p {
+    color: #53616a;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.legal-content a {
+    color: #1d4f6e;
+    text-decoration: none;
+}
+
+.legal-content a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   FOOTER LINKS
+   ========================================================= */
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #d9dbda;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
