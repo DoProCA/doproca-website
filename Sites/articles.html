@@ -7,11 +7,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>DoProCA </title>
+    <title>DoProCA</title>
 
-    <link rel="icon" type="image/png" href="../pictures/Bildmarke.png">
+    <link
+        rel="icon"
+        type="image/png"
+        href="../pictures/Bildmarke.png"
+    >
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
 
     <meta
         name="description"
@@ -21,43 +28,43 @@
 </head>
 
 
-
 <body>
 
 
-    <!-- =========================================
-         HEADER
-    ========================================= -->
+<!-- =========================================
+     HEADER
+========================================= -->
 
-    <header>
+<header>
 
-        <a href="#" class="logo">
+    <a href="#" class="logo">
 
-            <img
-                src="../pictures/Logo groß.png"
-                alt="DoProCA – Documentation, Processes, Conformity, Advancement"
-            >
+        <img
+            src="../pictures/Logo groß.png"
+            alt="DoProCA – Documentation, Processes, Conformity, Advancement"
+        >
 
+    </a>
+
+
+    <nav>
+
+        <a href="about.html">
+            Über
         </a>
 
+        <a href="../index.html#themenbereich">
+            Themenbereiche
+        </a>
 
-        <nav>
+        <a href="#hero">
+            Berichte
+        </a>
 
-            <a href="about.html">
-                Über
-            </a>
+    </nav>
 
-            <a href="../index.html#themenbereich">
-                Themenbereiche
-            </a>
+</header>
 
-            <a href="#hero">
-                Berichte
-            </a>
-
-        </nav>
-
-    </header>
 
 
 <!-- =========================================
@@ -89,7 +96,7 @@
 
 
         <!-- =====================================
-             BEISPIEL-BERICHT
+             ARTIKEL
         ====================================== -->
 
         <article class="article-card">
@@ -123,32 +130,37 @@
 
 
                 <p>
-                    In Zeiten in denen die Technische Redaktion eine schier unendliche Masse an Werkzeuge verfügt,
-                    soll dieser Bericht den Fokus auf den ursprünglichen Sinn und das Ziel der Technischen Redaktion beleuchten.
+                    In Zeiten in denen die Technische Redaktion
+                    eine schier unendliche Masse an Werkzeuge
+                    verfügt, soll dieser Bericht den Fokus auf
+                    den ursprünglichen Sinn und das Ziel der
+                    Technischen Redaktion beleuchten.
                 </p>
 
 
+                <!-- BUTTONS -->
 
-<div class="article-buttons">
+                <div class="article-buttons">
 
-    <a
-        href="Articles/2026.09.15_Technische Dokumentation/index.html"
-        class="article-button"
-    >
-        Bericht lesen
-        <span>→</span>
-    </a>
+                    <a
+                        href="Articles/2026.09.15_Technische%20Dokumentation/index.html"
+                        class="article-button"
+                    >
+                        Bericht lesen
+                        <span>→</span>
+                    </a>
 
-    <button
-        type="button"
-        class="article-button"
-        onclick="openInquiryForm('2026.09.15_Technische Dokumentation')"
-    >
-        Anfrage
-        <span>→</span>
-    </button>
 
-</div>
+                    <button
+                        type="button"
+                        class="article-button article-inquiry-button"
+                        onclick="openInquiryForm('2026.09.15_Technische Dokumentation')"
+                    >
+                        Anfrage
+                        <span>→</span>
+                    </button>
+
+                </div>
 
 
             </div>
@@ -158,13 +170,30 @@
 
     </div>
 
-    <!-- =========================================
-     ANFRAGEFORMULAR
+</section>
+
+
+
+<!-- =========================================
+     ANFRAGE-MODAL
 ========================================= -->
 
-<div id="inquiry-modal" class="inquiry-modal">
+<div
+    id="inquiry-modal"
+    class="inquiry-modal"
+    aria-hidden="true"
+>
 
-    <div class="inquiry-form-container">
+
+    <div
+        class="inquiry-form-container"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="inquiry-title"
+    >
+
+
+        <!-- SCHLIESSEN -->
 
         <button
             type="button"
@@ -175,28 +204,38 @@
             ×
         </button>
 
-        <div class="cv-section-header">
+
+
+        <!-- KOPF -->
+
+        <div class="inquiry-header">
 
             <div class="section-label">
                 ANFRAGE
             </div>
 
-            <h2>
+            <h2 id="inquiry-title">
                 Artikel anfragen
             </h2>
 
             <p>
-                Füllen Sie das folgende Formular aus.
+                Sie interessieren sich für einen Artikel?
+                Hinterlassen Sie uns Ihre Kontaktdaten.
                 Wir melden uns anschließend bei Ihnen.
             </p>
 
         </div>
 
 
+
+        <!-- FORMULAR -->
+
         <form
-            action="DEIN-FORMULAR-ENDPUNKT"
+            id="inquiry-form"
+            action="#"
             method="POST"
         >
+
 
             <!-- ARTIKEL -->
 
@@ -211,45 +250,56 @@
                     name="article"
                     required
                 >
+
+                    <option value="">
+                        Artikel auswählen
+                    </option>
+
                 </select>
 
             </div>
 
 
-            <!-- VORNAME -->
 
-            <div class="form-field">
+            <!-- VORNAME / NACHNAME -->
 
-                <label for="first-name">
-                    Vorname
-                </label>
+            <div class="form-row">
 
-                <input
-                    type="text"
-                    id="first-name"
-                    name="first_name"
-                    required
-                >
+                <div class="form-field">
+
+                    <label for="first-name">
+                        Vorname
+                    </label>
+
+                    <input
+                        type="text"
+                        id="first-name"
+                        name="first_name"
+                        autocomplete="given-name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="last-name">
+                        Nachname
+                    </label>
+
+                    <input
+                        type="text"
+                        id="last-name"
+                        name="last_name"
+                        autocomplete="family-name"
+                        required
+                    >
+
+                </div>
 
             </div>
 
-
-            <!-- NACHNAME -->
-
-            <div class="form-field">
-
-                <label for="last-name">
-                    Nachname
-                </label>
-
-                <input
-                    type="text"
-                    id="last-name"
-                    name="last_name"
-                    required
-                >
-
-            </div>
 
 
             <!-- FIRMA -->
@@ -264,9 +314,11 @@
                     type="text"
                     id="company"
                     name="company"
+                    autocomplete="organization"
                 >
 
             </div>
+
 
 
             <!-- STRASSE -->
@@ -281,46 +333,53 @@
                     type="text"
                     id="street"
                     name="street"
+                    autocomplete="street-address"
                     required
                 >
 
             </div>
 
 
-            <!-- PLZ -->
 
-            <div class="form-field">
+            <!-- PLZ / ORT -->
 
-                <label for="postal-code">
-                    PLZ
-                </label>
+            <div class="form-row address-row">
 
-                <input
-                    type="text"
-                    id="postal-code"
-                    name="postal_code"
-                    required
-                >
+                <div class="form-field postal-field">
+
+                    <label for="postal-code">
+                        PLZ
+                    </label>
+
+                    <input
+                        type="text"
+                        id="postal-code"
+                        name="postal_code"
+                        autocomplete="postal-code"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-field city-field">
+
+                    <label for="city">
+                        Ort
+                    </label>
+
+                    <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        autocomplete="address-level2"
+                        required
+                    >
+
+                </div>
 
             </div>
 
-
-            <!-- ORT -->
-
-            <div class="form-field">
-
-                <label for="city">
-                    Ort
-                </label>
-
-                <input
-                    type="text"
-                    id="city"
-                    name="city"
-                    required
-                >
-
-            </div>
 
 
             <!-- LAND -->
@@ -334,6 +393,7 @@
                 <select
                     id="country"
                     name="country"
+                    autocomplete="country-name"
                     required
                 >
 
@@ -378,12 +438,13 @@
                     </option>
 
                     <option value="other">
-                        anderes Land
+                        Anderes Land
                     </option>
 
                 </select>
 
             </div>
+
 
 
             <!-- DATENSCHUTZ -->
@@ -398,16 +459,20 @@
                         required
                     >
 
-                    Ich habe die
-                    <a href="datenschutz.html" target="_blank">
-                        Datenschutzerklärung
-                    </a>
-                    gelesen und stimme der Verarbeitung meiner
-                    Angaben zur Bearbeitung meiner Anfrage zu.
+                    <span>
+                        Ich habe die
+                        <a href="datenschutz.html" target="_blank">
+                            Datenschutzerklärung
+                        </a>
+                        gelesen und stimme der Verarbeitung
+                        meiner Angaben zur Bearbeitung meiner
+                        Anfrage zu.
+                    </span>
 
                 </label>
 
             </div>
+
 
 
             <!-- ABSCHICKEN -->
@@ -420,65 +485,113 @@
                 <span>→</span>
             </button>
 
+
         </form>
 
     </div>
 
 </div>
 
-</section>
 
 
-    <!-- =========================================
-         FOOTER
-    ========================================= -->
+<!-- =========================================
+     FOOTER
+========================================= -->
 
-    <footer>
+<footer>
 
-
-        <div>
-
-            2026 <strong>DoProCA</strong>
-
-        </div>
+    <div>
+        2026 <strong>DoProCA</strong>
+    </div>
 
 
-        <div>
+    <div>
+        Documentation · Processes · Conformity &amp; Advancement
+    </div>
 
-            Documentation · Processes · Conformity &amp; Advancement
-        
-        </div>
 
-        <div>
-            <a href="datenschutz.html">
-                Datenschutz
-            </a>
-        </div>
+    <div>
+        <a href="datenschutz.html">
+            Datenschutz
+        </a>
+    </div>
 
-        <div>
-            <a href="impressum.html">
-                Impressum
-            </a>
-        </div>
 
-    </footer>
+    <div>
+        <a href="impressum.html">
+            Impressum
+        </a>
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
 <script>
 
+    let articles = [];
+
+
     /*
-     * Alle online verfügbaren Artikel
-     *
-     * Der Name entspricht dem Ordner
-     * unter /Articles/
+     * Artikel aus articles.txt laden
      */
 
-    const articles = [
+    async function loadArticles() {
 
-    {
-        folder: "2026.09.15_Technische Dokumentation",
-        title: "Dem Anfang wohnt kein Zauber inne"
+        try {
+
+            const response = await fetch("../data/articles.txt");
+
+            if (!response.ok) {
+                throw new Error("articles.txt konnte nicht geladen werden.");
+            }
+
+            const text = await response.text();
+
+
+            articles = text
+                .split("\n")
+                .map(line => line.trim())
+                .filter(line => line.length > 0)
+                .map(line => {
+
+                    const separator = line.indexOf("|");
+
+                    if (separator === -1) {
+                        return null;
+                    }
+
+                    return {
+
+                        folder: line
+                            .substring(0, separator)
+                            .trim(),
+
+                        title: line
+                            .substring(separator + 1)
+                            .trim()
+
+                    };
+
+                })
+                .filter(article => article !== null);
+
+
+        } catch (error) {
+
+            console.error(
+                "Fehler beim Laden der Artikel:",
+                error
+            );
+
+        }
+
     }
 
-];
 
 
     /*
@@ -487,30 +600,41 @@
 
     function openInquiryForm(selectedArticle) {
 
-        const modal = document.getElementById("inquiry-modal");
-        const select = document.getElementById("article");
+        const modal =
+            document.getElementById("inquiry-modal");
+
+        const select =
+            document.getElementById("article");
+
 
         /*
-         * Dropdown zunächst leeren
+         * Dropdown zurücksetzen
          */
 
         select.innerHTML = "";
 
 
         /*
-         * Alle verfügbaren Artikel einfügen
+         * Artikel hinzufügen
          */
 
         articles.forEach(article => {
 
-            const option = document.createElement("option");
+            const option =
+                document.createElement("option");
 
-            option.value = article;
-            option.textContent = article;
 
-            if (article === selectedArticle) {
+            option.value = article.folder;
+
+            option.textContent = article.title;
+
+
+            if (article.folder === selectedArticle) {
+
                 option.selected = true;
+
             }
+
 
             select.appendChild(option);
 
@@ -518,12 +642,36 @@
 
 
         /*
-         * Formular anzeigen
+         * Modal anzeigen
          */
 
         modal.classList.add("active");
 
+        modal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+
+        /*
+         * Scrollen der Seite verhindern
+         */
+
+        document.body.classList.add(
+            "modal-open"
+        );
+
+
+        /*
+         * Fokus auf erstes Feld
+         */
+
+        document
+            .getElementById("first-name")
+            .focus();
+
     }
+
 
 
     /*
@@ -532,41 +680,80 @@
 
     function closeInquiryForm() {
 
-        document
-            .getElementById("inquiry-modal")
-            .classList.remove("active");
+        const modal =
+            document.getElementById("inquiry-modal");
+
+
+        modal.classList.remove("active");
+
+        modal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+
+        document.body.classList.remove(
+            "modal-open"
+        );
 
     }
 
 
+
     /*
-     * Schließen bei Klick außerhalb des Formulars
+     * Klick auf den Hintergrund
+     * schließt das Formular
      */
 
     document
         .getElementById("inquiry-modal")
-        .addEventListener("click", function(event) {
+        .addEventListener(
+            "click",
+            function(event) {
 
-            if (event.target === this) {
-                closeInquiryForm();
+                if (event.target === this) {
+
+                    closeInquiryForm();
+
+                }
+
             }
+        );
 
-        });
 
 
     /*
      * ESC schließt das Formular
      */
 
-    document.addEventListener("keydown", function(event) {
+    document.addEventListener(
+        "keydown",
+        function(event) {
 
-        if (event.key === "Escape") {
-            closeInquiryForm();
+            if (
+                event.key === "Escape" &&
+                document
+                    .getElementById("inquiry-modal")
+                    .classList.contains("active")
+            ) {
+
+                closeInquiryForm();
+
+            }
+
         }
+    );
 
-    });
+
+
+    /*
+     * Artikel laden
+     */
+
+    loadArticles();
 
 </script>
+
 
 </body>
 
