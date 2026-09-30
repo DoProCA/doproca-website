@@ -1500,8 +1500,8 @@ footer strong {
         linear-gradient(
             90deg,
             #1d4f6e 0%,
-            #1d4f6e 25%,
-            #7d8588 100%
+            #1d4f6e 50%,
+            #7d8588 50%
         );
 
     color: #ffffff;
