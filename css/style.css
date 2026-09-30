@@ -1494,27 +1494,28 @@ footer strong {
     align-items: center;
     justify-content: center;
 
+    align-self: flex-start;
+
+    margin-top: auto;
+
     padding: 11px 17px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #1d4f6e 0%,
-            #1d4f6e 35%,
-            #7d8588 65%,
-            #7d8588 100%
-        );
+    background: linear-gradient(
+        90deg,
+        #1d4f6e 0%,
+        #1d4f6e 40%,
+        #7d8588 70%,
+        #7d8588 100%
+    );
 
     color: #ffffff;
 
     border-radius: 4px;
 
     font-size: 13px;
-
     font-weight: bold;
 
     cursor: default;
-
     user-select: none;
 }
 
