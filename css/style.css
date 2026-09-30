@@ -1312,16 +1312,30 @@ footer strong {
     box-shadow:
         0 15px 35px rgba(20, 40, 50, 0.10);
 }
+.article-buttons {
+    margin-top: 1.5rem;
+}
+
 .article-in-progress {
+    display: inline-block;
+    padding: 0.65rem 1.4rem;
+
     background: linear-gradient(
-        to right,
-        #123f4a 0%,
-        #b8baba 100%
+        90deg,
+        #123b4a 0%,
+        #123b4a 25%,
+        #7d8588 100%
     );
 
     color: #ffffff;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    border-radius: 4px;
+
     cursor: default;
-    pointer-events: none;
+    user-select: none;
 }
 
 
@@ -1520,7 +1534,29 @@ footer strong {
    ARTIKELBILD
 --------------------------------------------------------- */
 
-.article-hero-image {
+.article-card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.article-card-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    pointer-events: none;
+}
+
+.article-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    filter: blur(3px) grayscale(20%);
+    transform: scale(1.03);
+}.article-hero-image {
     max-width: 1200px;
 
     margin: 0 auto 70px;
