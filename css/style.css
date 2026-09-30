@@ -1497,14 +1497,13 @@ footer strong {
     padding: 11px 17px;
 
     background:
-background:
-    linear-gradient(
-        90deg,
-        #1d4f6e 0%,
-        #1d4f6e 35%,
-        #7d8588 65%,
-        #7d8588 100%
-    );
+        linear-gradient(
+            90deg,
+            #1d4f6e 0%,
+            #1d4f6e 35%,
+            #7d8588 65%,
+            #7d8588 100%
+        );
 
     color: #ffffff;
 
